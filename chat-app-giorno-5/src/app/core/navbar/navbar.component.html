@@ -1,0 +1,22 @@
+<mat-toolbar color="accent">
+    <span>
+        ChatGPI
+    </span>
+    <span class="spacer"></span>
+    <!--Navbar per utente non connesso-->
+    <div *ngIf="!isLogged; else loggedInNav">
+      <span class="menu-item">
+        <a routerLink="/profile">Nuovo profilo</a>
+      </span>
+    </div>
+    <!--Navbar per utente connesso-->
+    <ng-template #loggedInNav>
+      <span class="menu-item">
+          <a [routerLink]="'/profile/' + isLogged">Il mio profilo</a>
+      </span>
+      <span class="menu-item">
+          <a routerLink="/chat">Chat</a>
+      </span>
+      <span class="menu-item" (click)="logout()">Logout</span>
+    </ng-template>
+</mat-toolbar>

@@ -1,0 +1,10 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <!--inseriamo filtro di ricerca-->
+    <app-users-search (startUserSearch)="performSearch($event)"></app-users-search>
+    <app-users-list [users]="usersFound" (userSelected)="loadChat($event)"></app-users-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-chat-window> </app-chat-window>
+  </mat-sidenav-content>
+</mat-sidenav-container>

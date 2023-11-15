@@ -1,0 +1,37 @@
+.online {
+    color: green;
+}
+
+.offline {
+    color: red;
+}
+
+
+.user-container {
+  display: flex;
+  justify-content: space-between;
+
+  padding: .5rem 1rem;
+
+  // padding: 1rem; in tutte le direzioni
+  // padding: .5rem 1rem; top/bottom, left/right
+  // padding: 1rem 1rem 1rem 1rem; top right bottom left (senso orario)
+  border-bottom: 1px solid black;
+
+  //selettore più hover usercontainer:hover
+  .name-container {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: bisque;
+    }
+  }
+
+}
+
+.icon {
+  cursor: pointer;
+}

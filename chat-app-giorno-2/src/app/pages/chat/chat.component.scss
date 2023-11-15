@@ -1,0 +1,11 @@
+.sidenav {
+  width: 20%;
+  //text-align: center;
+  padding-top: 1rem;
+  display: flex;
+  justify-items: center;
+}
+
+.example-container{
+  height: calc(100vh - 64px);
+}

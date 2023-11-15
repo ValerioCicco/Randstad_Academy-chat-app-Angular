@@ -1,0 +1,79 @@
+<!-- Creates a layout with a left-positioned sidenav and explicit content. -->
+<mat-sidenav-container class="example container" style="height: 100vh">
+  <mat-sidenav mode="side" opened style="width: 250px">
+    <img [src]="photoUrl" alt="profile img" width="90%" />
+  </mat-sidenav>
+  <mat-sidenav-content>
+    Main content
+    <mat-card>
+      <mat-card-title>Profilo</mat-card-title>
+      <mat-card-content>
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Dati utente </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-grid-list cols="4" rowHeight="2:1">
+              <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Name</mat-label>
+                  <input matInput [value]="user.firstName" />
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Surname</mat-label>
+                  <input matInput [value]="user.lastName" />
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Data</mat-label>
+                  <input
+                    matInput
+                    [matDatepicker]="birthDate"
+                    [value]="user.birthDate"
+                  />
+                  <mat-hint>DD/MM/YYYY</mat-hint>
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="birthDate"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #birthDate></mat-datepicker>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Professione</mat-label>
+                  <input matInput [value]="user.job" />
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true" hideToggle>
+            <mat-expansion-panel-header>
+              Contatti
+            </mat-expansion-panel-header>
+            <mat-grid-list cols="2" rowHeight="2:1">
+              <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Contatto mobile</mat-label>
+                  <input matInput [value]="user.contact![0].number" />
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Contatto fisso</mat-label>
+                  <input matInput [value]="user.contact![1].number" />
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
+    </mat-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>

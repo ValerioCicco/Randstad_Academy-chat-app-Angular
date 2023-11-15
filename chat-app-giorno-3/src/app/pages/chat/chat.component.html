@@ -1,0 +1,12 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened class="sidenav">
+        <app-users-list (userSelected)="loadChat($event)"></app-users-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-chat-window>
+        </app-chat-window>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

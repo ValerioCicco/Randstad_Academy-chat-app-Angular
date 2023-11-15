@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let u of users; index as i">
+    {{ u.firstName | uppercase }} {{ u.lastName | titlecase}} (
+    <span [ngClass]="{online: u.isLogged == true, offline: u.isLogged == false} ">
+      {{u.isLogged ? "ONLINE" : "OFFLINE"}}
+      </span
+    >)
+  </li>
+</ul>

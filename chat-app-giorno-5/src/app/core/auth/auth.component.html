@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="content">
+    <h4>Seleziona un utente</h4>
+    <mat-select [(ngModel)]="userId" (change)="onSelectionChange()">
+      <mat-option *ngFor="let user of offlineUsers" [value]="user.id">
+        {{user.firstName}} {{user.lastName}}
+      </mat-option>
+    </mat-select>
+    <div class="mt-1">
+      <!-- <button (click)="login()">LOGIN</button> -->
+      <button mat-raised-button color="primary" (click)="login()">LOGIN</button>
+    </div>
+    <div class="mt-1">
+      <button mat-raised-button color="accent"><a routerLink="/profile">CREA UTENTE</a></button>
+    </div>
+  </div>
+</div>
